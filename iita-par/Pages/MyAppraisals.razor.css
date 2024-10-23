@@ -2,99 +2,106 @@
 .appraisal-header {
     text-align: left;
     padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.appraisal-header:hover {
+    background-color: #f5f5f5;
 }
 
 .appraisal-header h1 {
     margin: 0;
-    font-size: 24px;
-    color: #333;
+    font-size: 28px;
+    color: #444;
     transition: color 0.3s ease-in-out;
 }
 
 .appraisal-header p {
     margin: 5px 0;
-    font-size: 16px;
-    color: #666;
+    font-size: 18px;
+    color: #777;
     transition: color 0.3s ease-in-out;
 }
 
 /* Appraisal content */
 .appraisal-content {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .appraisal-content h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 40px;
-    color: #333;
+    color: #444;
     transition: color 0.3s ease-in-out;
 }
 
 /* Filter year section */
 .filter-year {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .filter-year label {
-    font-size: 15px;
+    font-size: 16px;
     margin-right: 10px;
-    color: #333;
+    color: #444;
     transition: color 0.3s ease-in-out;
 }
 
 .filter-year select {
-    padding: 8px;
-    font-size: 15px;
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .filter-year select:hover {
-    background-color: #f0f0f0;
-    border-color: #ccc;
+    background-color: #f0f8ff;
+    border-color: #bbb;
 }
 
 /* Appraisal table */
 .appraisal-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-.appraisal-table th, .appraisal-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
+.appraisal-table th,
+.appraisal-table td {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
     text-align: left;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .appraisal-table th {
-    background-color: #f2f2f2;
-    color: #333;
-    font-size: 16px;
+    background-color: #e8f0fe;
+    color: #444;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .appraisal-table th:hover {
-    background-color: #e0e0e0;
+    background-color: #d0e3ff;
 }
 
 .appraisal-table td {
-    color: #555;
+    color: #666;
 }
 
 .appraisal-table a {
     color: #007bff;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.3s ease;
 }
 
 .appraisal-table a:hover {
     color: #0056b3;
     text-decoration: underline;
+    transform: scale(1.05);
 }

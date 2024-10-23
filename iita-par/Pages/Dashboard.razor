@@ -1,169 +1,129 @@
 ﻿@page "/"
 @inject NavigationManager Navigation
+
 <style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.page-content {
+    opacity: 0;
+    transition: opacity 2s ease-out, transform 1.5s ease-out;
+    transform: translateY(30px);
+}
+
+.page-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .info-section {
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.4s ease, transform 0.3s ease;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 35px;
+    opacity: 0;
+    transition: transform 1.5s ease-out, opacity 2s ease-out;
+    transform: translateY(30px);
 }
 
-.info-section:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    transform: translateY(-8px);
-}
-
-.info-section h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.info-section p, .info-section a {
-    color: #555;
-    line-height: 1.6;
+.info-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .action-item {
-    background: linear-gradient(135deg, #ffecd2, #fcb69f);
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.5s ease, transform 0.4s ease;
-    padding: 25px;
+    background: linear-gradient(135deg, #fafafa, #eceff1);
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     text-align: center;
     cursor: pointer;
-    margin-bottom: 30px;
-    position: relative;
-    overflow: hidden;
+    margin-bottom: 35px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 1.5s ease-out, opacity 2s ease-out;
 }
 
-.action-item:hover {
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-    transform: translateY(-8px) scale(1.02);
-}
-
-.action-item .icon {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.action-item h3 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.action-item p {
-    color: #666;
-    line-height: 1.5;
-}
-
-/* Additional Styles for a Nice Glow Effect */
-.info-section::before,
-.action-item::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-    transform: translate(-50%, -50%);
-    transition: opacity 0.5s ease;
-    z-index: 0;
-}
-
-.info-section:hover::before,
-.action-item:hover::before {
+.action-item.visible {
     opacity: 1;
+    transform: translateY(0);
 }
 
+.navbar {
+    background-color: #1a237e;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffcc80;
+}
 </style>
 
-<div class="main-header">
-    <div class="main-header-content">
-        <div class="greeting">
-            <h1>Good morning, Patrick</h1>
-            <p><i class="fa-regular fa-bell"></i>   Your workplan is yet to <br /> be approved.</p>
-        </div>
-        <div class="time-info">
-            <h2>11:40 AM</h2>
-            <p>Tuesday, July 11</p>
-        </div>
+<div class="page-content">
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Workplans</a>
+        <a href="#">Appraisals</a>
     </div>
-    <div class="notice">
-        Please take note: Database is refreshed every 24 hours. After updating your records in the other online systems, the changes will not immediately display in this application.
+
+    <div class="info-section">
+        <h3>Your Account Info</h3>
+        <p>Username: ADEMOLA Patrick</p>
+        <p>Email: adepatrick@cgiar.org</p>
     </div>
-</div>
-<div class="actions">
-    <h2>I would like to...</h2>
-    <div class="action-items">
+
+    <div class="info-section">
+        <h3>Your Appraiser</h3>
+        <p>David, Smith</p>
+    </div>
+
+    <div class="actions">
         <div class="action-item" @onclick=@(() => Navigation.NavigateTo("/workplan"))>
             <div class="icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
             <h3>Upload my Workplan</h3>
-            <p>Submit my planned tasks and objectives for the appraisal period.</p>
-        </div>
-        <div class="action-item" @onclick=@(() => Navigation.NavigateTo("/my-appraisals"))>
-            <div class="icon"><i class="fa-solid fa-file-pen"></i></div>
-            <h3>Manage my Appraisals</h3>
-            <p>Review and update my appraisal details and add comments.</p>
-        </div>
-        <div class="action-item" @onclick=@(() => Navigation.NavigateTo("/view-my-pdf"))>
-            <div class="icon"><i class="fa-solid fa-file-pdf"></i></div>
-            <h3>View/Download PDFs</h3>
-            <p>Access and download PDF copies of your workplans and appraisals.</p>
-        </div>
-        <div class="action-item" @onclick=@(() => Navigation.NavigateTo("/achievements"))>
-            <div class="icon"><i class="fa-solid fa-list-check"></i></div>
-            <h3>Manage Achievements</h3>
-            <p>Record and update your accomplishments to reflect completed workplans.</p>
-        </div>
-    </div>
-</div>
-<div class="contact">
-    <p><img src="assets/megaphone.svg" alt="" /> Please contact <a href="mailto:IITA-HR@cgiar.org">IITA-HR@cgiar.org</a> if appraiser information is missing or incorrect.</p>
-    <div class="info-sections">
-        <div class="info-section">
-            <h3>Your Account Info</h3>
-            <div class="labels" style="display: inline-block;width: 50%;">
-                <p><strong>Username:</strong></p>
-                <p><strong>Registered e-mail address:</strong></p>
-                <p><strong>Last name:</strong></p>
-                <p><strong>First name:</strong></p>
-                <p><strong>Staff ID:</strong></p>
-            </div><div class="values" style="display: inline-block;width: 50%;">
-                <p>ADEMOLA Patrick</p>
-                <p>adepatrick@cgiar.org</p>
-                <p>ADEMOLA</p>
-                <p>Patrick</p>
-                <p>E3ADEPAT</p>
-            </div>
-        </div>
-        <div class="info-section">
-            <h3>Supervising</h3>
-            <p>You are viewing your own records.</p>
-            <p><a href="#">Go to list of scientists you supervise</a></p>
-            <p><a href="#">Go to list of irs you supervise</a></p>
-            <p><a href="#">Go to list of p4d you supervise</a></p>
-        </div>
-        <div class="info-section">
-            <h3>Your Appraiser</h3>
-            <p>• David, Smith</p>
+            <p>Submit your planned tasks and objectives for the appraisal period.</p>
         </div>
     </div>
 </div>
 
-<div class="work-plan">
-    <h2>NRS Workplans</h2>
-    <p>Please enter your <a href="#">Workplan</a>.</p>
-</div>
+@section Scripts {
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const pageContent = document.querySelector('.page-content');
+        const sections = document.querySelectorAll('.info-section, .action-item');
 
-@code {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
 
+        observer.observe(pageContent);
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
 }

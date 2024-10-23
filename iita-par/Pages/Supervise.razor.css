@@ -1,39 +1,51 @@
 ﻿.supervise-header, .supervise-content {
-    background: linear-gradient(145deg, #f8f9fc, #e9ecef);
-    border-radius: 12px;
-    padding: 25px;
-    margin: 20px 0;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08), 0 10px 30px rgba(0, 0, 0, 0.04);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: linear-gradient(145deg, #ffffff, #f3f4f6);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 15px 35px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
     z-index: 1;
 }
 
+.supervise-header:hover, .supervise-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08), 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
 .supervise-header h1 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    color: #343a40;
-    margin-bottom: 10px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.supervise-header h1:hover {
+    color: #007bff;
 }
 
 .supervise-header p {
     font-size: 16px;
-    color: #6c757d;
-    margin-bottom: 20px;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    line-height: 1.6;
 }
 
 .supervise-content h2 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
-    color: #343a40;
-    margin-bottom: 10px;
+    color: #2c3e50;
+    margin-bottom: 12px;
 }
 
 .supervise-content p {
     font-size: 16px;
-    color: #495057;
-    margin-bottom: 15px;
+    color: #57606f;
+    margin-bottom: 18px;
+    line-height: 1.6;
 }
 
 .supervise-content .appraisee-list ul {
@@ -43,46 +55,64 @@
 }
 
 .supervise-content .appraisee-list ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .supervise-content .appraisee-list ul li a {
     text-decoration: none;
-    color: #1d72b8;
+    color: #3498db;
     font-weight: 500;
-    transition: color 0.4s ease, transform 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .supervise-content .appraisee-list ul li a:hover {
-    color: #0a58ca;
-    transform: translateY(-2px);
+    color: #2980b9;
+    transform: translateY(-4px);
 }
 
 .supervise-header hr {
     border: none;
     height: 1px;
-    background-color: #ddd;
-    margin: 20px 0;
+    background-color: #e0e0e0;
+    margin: 25px 0;
 }
 
 .supervise-content .form-group {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    margin-bottom: 25px;
+    transition: box-shadow 0.3s ease;
+}
+
+.supervise-content .form-group:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
 }
 
 .table {
     font-size: 14px;
     width: 100%;
     border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
 }
 
-.table td {
-    padding: 8px 10px;
+.table td, .table th {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+.table td:hover, .table th:hover {
+    background-color: #f7f8fa;
 }
 
 .table strong {
     font-weight: 600;
+    color: #2c3e50;
 }

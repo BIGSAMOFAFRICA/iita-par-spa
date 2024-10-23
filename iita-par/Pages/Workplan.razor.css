@@ -215,7 +215,6 @@
 .submit-button:hover {
     background-color: #00408a;
     transform: translateY(-4px);
-    
 }
 
 /* Action logs with clear and accessible design */
@@ -246,4 +245,50 @@
 
 .action-logs td {
     color: #555;
+}
+
+/* Details button with cool gradient, shadow, and hover effects */
+.details-button {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background: linear-gradient(135deg, #0056b3, #007bff);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.details-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.details-button:hover::before {
+    left: 0;
+}
+
+.details-button:hover {
+    background: linear-gradient(135deg, #00408a, #0056b3);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.details-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba
 }

@@ -1,150 +1,266 @@
-﻿body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    background-color: #f7f9fc;
-    line-height: 1.6;
+﻿/* General body styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    color: #2c3e50;
+    background: linear-gradient(135deg, #ecf0f1, #bdc3c7); /* Subtle background gradient */
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease;
 }
 
+/* Container for page content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+/* Header section styling */
 .achievements-header {
-    text-align: left;
+    text-align: center;
     padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 3px solid #34495e;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .achievements-header h1 {
     margin: 0;
-    font-size: 26px;
-    color: #007bff;
+    font-size: 32px; /* Larger font for emphasis */
+    color: #1abc9c;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #16a085, #3498db); /* Gradient text effect */
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .achievements-header p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #555;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #7f8c8d;
 }
 
+/* Achievements content styling */
 .achievements-content {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .achievements-content h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    transition: color 0.4s ease;
 }
 
+.achievements-content h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: #1abc9c;
+    border-radius: 5px;
+}
+
+.achievements-content h2:hover {
+    color: #1abc9c;
+}
+
+/* Objective card styling */
 .objective {
-    margin-bottom: 25px;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    padding: 25px;
+    border: 2px solid #bdc3c7;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Soft gradient background */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.objective::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.3), rgba(52, 152, 219, 0));
+    transition: all 0.4s ease;
+    z-index: 0;
+    transform: scale(0);
+}
+
+.objective:hover::before {
+    transform: scale(1); /* Cool ripple hover effect */
 }
 
 .objective:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px) scale(1.05); /* Floating hover effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .objective h3 {
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: 15px;
-    color: #333;
+    color: #3498db;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 1px;
+    transition: color 0.4s ease;
 }
 
+.objective h3:hover {
+    color: #1abc9c; /* Smooth color change on hover */
+}
+
+/* Toggle button styling */
 .toggle-details {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     cursor: pointer;
-    color: #007bff;
+    color: #3498db;
     background: none;
     border: none;
     padding: 0;
-    font-size: 16px;
-    transition: color 0.3s ease;
+    font-size: 18px;
+    transition: color 0.4s ease, transform 0.4s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .toggle-details:hover {
-    color: #0056b3;
+    color: #1abc9c;
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
+/* Detailed content styling */
 .workplan-details {
     margin: 20px auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
+    background-color: #fdfdfd;
+    padding: 25px;
+    border: 2px solid #bdc3c7;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
+.workplan-details:hover {
+    background-color: #f0f8ff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Enhance hover effect */
+}
+
+/* KPI and Achievement sections */
 .kpi-section, .achievement-section {
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    background-color: #f1f1f1;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease;
+    padding: 20px;
+    border: 2px solid #bdc3c7;
+    border-radius: 12px;
+    background-color: #fafafa;
+    margin-bottom: 25px;
+    transition: background-color 0.4s ease;
 }
 
 .kpi-section p, .achievement-section p {
     margin: 10px 0;
-    font-size: 16px;
-    color: #444;
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.8;
 }
 
 .achievement-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient(135deg, #ecf0f1, #f0f0f0); /* Light gradient */
 }
 
 .buttons {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
+/* Buttons styling */
 .delete-btn, .edit-btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .delete-btn {
-    background-color: #ff4d4d;
+    background-color: #e74c3c;
     color: white;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2); /* Soft shadow */
 }
 
 .delete-btn:hover {
-    background-color: #e43a3a;
+    background-color: #c0392b;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(231, 76, 60, 0.3); /* Stronger hover shadow */
 }
 
 .edit-btn {
-    background-color: #f0f0f0;
-    color: black;
+    background-color: #ecf0f1;
+    color: #2c3e50;
 }
 
 .edit-btn:hover {
-    background-color: #e0e0e0;
+    background-color: #dfe6e9;
+    transform: scale(1.1);
 }
 
+/* Add achievement button */
 .add-achievement-button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 14px 30px;
+    font-size: 18px;
     color: #fff;
-    background-color: #007bff;
+    background: linear-gradient(135deg, #16a085, #1abc9c);
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .add-achievement-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
+    background-color: #16a085;
+    transform: translateY(-6px); /* Lift button on hover */
+    box-shadow: 0 10px 20px rgba(26, 188, 156, 0.4); /* Glowing shadow */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .achievement-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .add-achievement-button {
+        width: 100%;
+    }
 }

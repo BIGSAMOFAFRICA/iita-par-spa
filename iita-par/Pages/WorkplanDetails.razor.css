@@ -1,43 +1,53 @@
-﻿.record-header {
+﻿/* Header Section */
+.record-header {
     text-align: left;
     padding-bottom: 20px;
     border-bottom: 1px solid #ddd;
 }
 
-    .record-header h1 {
-        margin: 0;
-        font-size: 22px;
-    }
+.record-header h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #333;
+    letter-spacing: 1.2px;
+}
 
-    .record-header p {
-        margin: 5px 0;
-        font-size: 14px;
-        color: #555;
-    }
+.record-header p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}
 
+/* Record Details Section */
 .record-details {
     margin-top: 20px;
     font-size: 14px;
+    color: #555;
 }
 
-    .record-details p {
-        margin: 5px 0;
-        font-size: 14px;
-    }
+.record-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
 
+/* Workplan Actions */
 .workplan-actions {
     margin-top: 20px;
-    /* display: flex;
-    justify-content: space-between; */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-    .workplan-actions button {
-        padding: 10px 15px;
-        font-size: 14px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+.workplan-actions button {
+    padding: 12px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
 
 .edit-button {
     background-color: #5bc0de;
@@ -54,6 +64,13 @@
     color: #fff;
 }
 
+/* Hover Effects */
+.workplan-actions button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* KPI Section */
 .kpi-list-header {
     margin-top: 20px;
     display: flex;
@@ -61,23 +78,34 @@
     align-items: center;
 }
 
-    .kpi-list-header h2 {
-        margin: 0;
-        font-size: 18px;
-    }
+.kpi-list-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
 
-    .kpi-list-header label {
-        margin-right: 10px;
-        font-size: 14px;
-    }
+.kpi-list-header label {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #777;
+}
 
+/* Dropdown styling */
 #year-select {
-    padding: 5px;
+    padding: 7px;
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
 }
 
+#year-select:focus {
+    border-color: #5bc0de;
+    outline: none;
+}
+
+/* KPI List and Items */
 .kpi-list {
     margin-top: 20px;
 }
@@ -86,33 +114,51 @@
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .kpi-item h3 {
-        margin-top: 0;
-        font-size: 16px;
-    }
+.kpi-item:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
 
-    .kpi-item p {
-        margin: 5px 0;
-        font-size: 14px;
-    }
+.kpi-item h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #444;
+    letter-spacing: 1.1px;
+}
 
+.kpi-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* KPI Actions */
 .kpi-actions {
     margin-top: 10px;
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
 }
 
-    .kpi-actions button {
-        padding: 10px 15px;
-        font-size: 14px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-left: 10px;
-    }
+.kpi-actions button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kpi-actions button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
 
 .delete-kpi-button {
     background-color: #d9534f;
